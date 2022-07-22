@@ -12,8 +12,8 @@ SECRET_KEY =config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-#ALLOWED_HOSTS =  ['127.0.0.1','key-knots.herokuapp.com']
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS =  ['127.0.0.1','key-knots.herokuapp.com']
+#ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'PROJECTNAME.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/  web: gunicorn key-knots.wsgi --log-file -   en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
