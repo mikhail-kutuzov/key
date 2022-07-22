@@ -115,7 +115,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR /'APPNAME'/'static'/'APPNAME'   #<---- uncommented
-STATICFILES_DIRS = [BASE_DIR /'APPNAME'/'static'/'APPNAME']    #<-- new adress added
+#STATICFILES_DIRS = [BASE_DIR /'APPNAME'/'static'/'APPNAME']    isse hataya h abhi just locally collectstatic chalaya fir
 MEDIA_ROOT  = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 # Default primary key field type
