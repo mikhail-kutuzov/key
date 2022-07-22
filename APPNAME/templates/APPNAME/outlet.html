@@ -1,0 +1,464 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    
+    <!--====== Title ======-->
+    <title>Smash - Bootstrap Business Template</title>
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{% static 'APPNAME/assets/images/favicon.png' %}" type="image/png">
+    
+    <!--====== Slick CSS ======-->
+    <link rel="stylesheet" href="{% static 'APPNAME/assets/css/slick.css' %}">
+        
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="{% static 'APPNAME/assets/css/LineIcons.css' %}">
+        
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="{% static 'APPNAME/assets/css/bootstrap.min.css' %}">
+    
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="{% static 'APPNAME/assets/css/default.css' %}">
+    
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="{% static 'APPNAME/assets/css/style.css' %}">
+    
+</head>
+
+<body>
+    
+    <!--====== PRELOADER PART START ======-->
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== PRELOADER PART ENDS ======-->
+    
+    <!--====== NAVBAR TWO PART START ======-->
+   <p style="text-align:center; font-family:Arial, Helvetica, sans-serif; background-color:lightcoral; opacity:0.6; color:white;">{{mess}}</p>
+    <section class="navbar-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                            <picture style="width:60px; padding-top:1.5%;">
+                                <source media="(min-width: 100px)" srcset="{% static 'APPNAME/assets/images/favicon.png' %}">
+                                <img src="#">
+                              </picture>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarTwo">
+                            <ul class="navbar-nav m-auto">
+                                <li class="nav-item active"><a class="page-scroll" href="#home">home</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#services">Features</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#about">About</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav> <!-- navbar -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== NAVBAR TWO PART ENDS ======-->
+    
+    <!--====== SLIDER PART START ======-->
+
+    <section id="home" class="slider_area">
+        <div id="carouselThree" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselThree" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselThree" data-slide-to="1"></li>
+                <li data-target="#carouselThree" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="slider-content">
+                                    <h1 class="title">Key Knots</h1>
+                                    <p class="text">Your one stop solution for all password managing issues , reliable hassle free and pocket friendly ,Go ahead, forget your passwords – Key Knots remembers them all for you for free.</p>
+                                    <ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one" href="{% url 'logger' %}">LOGIN</a></li>
+                                        <li><a class="main-btn rounded-two" href="{% url 'signer' %}">SIGN UP</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- container -->
+                    <div class="slider-image-box d-none d-lg-flex align-items-end">
+                        <div class="slider-image">
+                            <img src="{% static 'APPNAME/assets/images/slider/1.png' %}" width="60%" style="margin-bottom:17%; margin-left:11%;" alt="Hero">
+                        </div> 
+                    </div> 
+                </div> 
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="slider-content">
+                                    <h1 class="title">Highly Secure</h1>
+                                    <p class="text">We Respect our users privacy , the data of every user is stored encrypted using advanced cryptographic techniques and algorithms , No one not even us can access your Data</p>
+                                    <ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one" href="{% url 'logger' %}">LOGIN</a></li>
+                                        <li><a class="main-btn rounded-two" href="{% url 'signer' %}">SIGN UP</a></li>
+                                    </ul>
+                                </div> <!-- slider-content -->
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- container -->
+                    <div class="slider-image-box d-none d-lg-flex align-items-end">
+                        <div class="slider-image">
+                            <img src="{% static 'APPNAME/assets/images/slider/2.png' %}" width="62%" style="margin-bottom:20%; margin-left:10%;" alt="Hero">
+                        </div> <!-- slider-imgae -->
+                    </div> <!-- slider-imgae box -->
+                </div> <!-- carousel-item -->
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="slider-content">
+                                    <h1 class="title">2 Factor Login</h1>
+                                    <p class="text">Our User login system is incredibely secure due to 2 layers of Login/ OTP verification system thus you just need to remember only your key knots password.</p>
+                                    <ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one" href="{% url 'logger' %}">LOGIN</a></li>
+                                        <li><a class="main-btn rounded-two" href="{% url 'signer' %}">SIGN UP</a></li>
+                                    </ul>
+                                </div> <!-- slider-content -->
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- container -->
+                    <div class="slider-image-box d-none d-lg-flex align-items-end">
+                        <div class="slider-image">
+                            <img src="{% static 'APPNAME/assets/images/slider/3.png' %}" width="60%" style="margin-bottom:20%; margin-left:11%;" alt="Hero">
+                        </div> <!-- slider-imgae -->
+                    </div> <!-- slider-imgae box -->
+                </div> <!-- carousel-item -->
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselThree" role="button" data-slide="prev">
+                <i class="lni lni-arrow-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#carouselThree" role="button" data-slide="next">
+                <i class="lni lni-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!--====== SLIDER PART ENDS ======-->
+    
+    <!--====== FEATRES TWO PART START ======-->
+
+    <section id="services" class="features-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section-title text-center pb-10">
+                        <h3 class="title">Site Features</h3>
+                        <p class="text">This site is tailor-made for security and speed ,offering users all device capabale credentials management service at 0 cost</p>
+                    </div> <!-- row -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Highly Secure</a></h4>
+                            <div class="features-icon">
+                                <i class="lni lni-lock"></i>
+                                <img class="shape" src="{% static 'APPNAME/assets/images/f-shape-1.svg' %}" alt="Shape">
+                            </div>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">Every user's data is encrypted and stored seprately in their vault provided by our highly secure Database</p>
+                            <a class="features-btn" href="#">LEARN MORE</a>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Responsive Design</a></h4>
+                            <div class="features-icon">
+                                <i class="lni lni-layout"></i>
+                                <img class="shape" src="{% static 'APPNAME/assets/images/f-shape-1.svg' %}" alt="Shape">
+                            </div>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">The site Featutes an Perfectly Responsive design thus you don't have to worry about which device to use on , it is highly mobile friendly</p>
+                            <a class="features-btn" href="#">LEARN MORE</a>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Fully Transparent</a></h4>
+                            <div class="features-icon">
+                                <i class="lni lni-magnifier"></i>
+                                <img class="shape" src="{% static 'APPNAME/assets/images/f-shape-1.svg' %}" alt="Shape">
+                            </div>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">We strictly adhere to all our terms and conditions of service thus if you have any doubt any time about security of your data feel free to reach us.</p>
+                            <a class="features-btn" href="#">LEARN MORE</a>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== FEATRES TWO PART ENDS ======-->
+    <!--====== ABOUT PART START ======-->
+
+    <section id="about" class="about-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="faq-content mt-45">
+                        <div class="about-title">
+                            <h6 class="sub-title">A Little More About Us</h6>
+                            <h4 class="title">Frequently Asked Questions <br> About Our Site</h4>
+                        </div> <!-- faq title -->
+                        <div class="about-accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Is my data secure with Key Knots?</a>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">As mentioned above about transparency , we are proud to say that we abide to all the terms and Conditions, thus you can trust Key Knots for security of your sensitive data </p>
+                                        </div>
+                                    </div> 
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">What details are required to register?</a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">To register to Key Knots you just need an active email id (that you will be accessing to get verification codes) and voila you are good to go</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Does the site faces any Downtime issue?</a>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">Surely not the site is hosted on world class servers , you will always have access to your data if you ever face any query feel free to contact us.</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingFore">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFore" aria-expanded="false" aria-controls="collapseFore">Does the site supports Dark Mode?</a>
+                                    </div>
+                                    <div id="collapseFore" class="collapse" aria-labelledby="headingFore" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">Sadly for our Masochist users , we currently do not support any dark mode switching option in our site , would deliver this option soon.</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingFive">
+                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">An Important Advise !</a>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">Since your Password for Key Knots is one way gate to login (along with email id) ,We assume that you store this master password somewhere safe because due to security options we do not provide any forget password options for master password!</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
+                            </div>
+                        </div> <!-- faq accordion -->
+                    </div> <!-- faq content -->
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-image mt-50">
+                        <img src="{% static 'APPNAME/assets/images/faqs.png' %}" style="width:70%; margin-left:15%; padding-top:5%;" alt="about">
+                    </div> <!-- faq image -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== ABOUT PART ENDS ======-->
+    
+    <!--====== CONTACT PART START ======-->
+
+    <section id="contact" class="contact-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section-title text-center pb-30">
+                        <h3 class="title">Contact</h3>
+                        <p class="text">If you have any query related to our terms of service , any site use related issue or just wanna thanks us for this free service , Contact us at.</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="contact-info pt-30">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-contact-info contact-color-1 mt-30 d-flex ">
+                            <div class="contact-info-icon">
+                                <i class="lni lni-map-marker"></i>
+                            </div>
+                            <div class="contact-info-content media-body">
+                                <p class="text"> Netaji Subhas University of Tech.<br>Dwarka , New Delhi</p>
+                            </div>
+                        </div> <!-- single contact info -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-contact-info contact-color-2 mt-30 d-flex ">
+                            <div class="contact-info-icon">
+                                <i class="lni lni-envelope"></i>
+                            </div>
+                            <div class="contact-info-content media-body">
+                                <p class="text">key_knots@outlook.com</p>
+                                <p class="text">support_knots@outlook.com</p>
+                            </div>
+                        </div> <!-- single contact info -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-contact-info contact-color-3 mt-30 d-flex ">
+                            <div class="contact-info-icon">
+                                <i class="lni lni-phone"></i>
+                            </div>
+                            <div class="contact-info-content media-body">
+                                <p class="text">+91 98-####-##32</p>
+                                <p class="text">+91 96-####-##57</p>
+                            </div>
+                        </div> <!-- single contact info -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- contact info -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-wrapper form-style-two pt-115">
+                        <h4 class="contact-title pb-10"><i class="lni lni-envelope"></i> Leave <span>A Message.</span></h4>
+                        
+                        <form id="contact-form" method="POST" action="{% url 'mailer' %}">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-input mt-25">
+                                        <label>Name</label>
+                                        <div class="input-items default">
+                                            <input name="name" type="text" placeholder="Name">
+                                            <i class="lni lni-user"></i>
+                                        </div>
+                                    </div> <!-- form input -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-input mt-25">
+                                        <label>Email</label>
+                                        <div class="input-items default">
+                                            <input type="email" name="email" placeholder="Email">
+                                            <i class="lni lni-envelope"></i>
+                                        </div>
+                                    </div> <!-- form input -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-input mt-25">
+                                        <label>Message</label>
+                                        <div class="input-items default">
+                                            <textarea name="message" placeholder="Massage"></textarea>
+                                            <i class="lni lni-pencil-alt"></i>
+                                        </div>
+                                    </div> <!-- form input -->
+                                </div>
+                                <p class="form-message"></p>
+                                <div class="col-md-12">
+                                    <div class="form-input light-rounded-buttons mt-30">
+                                        <button class="main-btn light-rounded-two" name="mailed">Send Message</button>
+                                    </div> <!-- form input -->
+                                </div>
+                            </div> <!-- row -->
+                        </form>
+                    </div> <!-- contact wrapper form -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== CONTACT PART ENDS ======-->
+    
+    <!--====== FOOTER PART START ======-->
+
+    <section class="footer-area footer-dark">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h2 style="color:white; text-align: center;">Key Knots</h2>
+                    <div class="footer-logo text-center">
+                        <a class="mt-30" href="#"><img src="{% static 'APPNAME/assets/images/logo-3.svg' %}" alt="Logo"></a>
+                    </div> <!-- footer logo -->
+                    <ul class="social text-center mt-60">
+                        <li><a href="http://www.nsit.ac.in"><i class="lni lni-facebook-filled"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/nikhil-yadav-3a8448164"><i class="lni lni-twitter-original"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/nikhil-yadav-3a8448164"><i class="lni lni-instagram-original"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/nikhil-yadav-3a8448164"><i class="lni lni-linkedin-original"></i></a></li>
+                    </ul> <!-- social -->
+                    <div class="footer-support text-center">
+                        <span class="number">+91 98-####-##32</span>
+                        <span class="mail">key_knots@outlook.com</span>
+                    </div>
+                    <div class="copyright text-center mt-35">
+                        <p class="text">Designed by <a href="https://www.linkedin.com/in/nikhil-yadav-3a8448164" rel="nofollow">Nikhil Yadav</a> also checkout <a rel="nofollow" href="http://nikhil7yadav.pythonanywhere.com">This</a> </p>
+                    </div> <!--  copyright -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== FOOTER PART ENDS ======-->
+    
+    <!--====== BACK TOP TOP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+
+    <!--====== BACK TOP TOP PART ENDS ======-->    
+
+    <script src="{% static 'APPNAME/assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'APPNAME/assets/js/vendor/modernizr-3.7.1.min.js' %}"></script>
+    <script src="{% static 'APPNAME/assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'APPNAME/assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'APPNAME/assets/js/main.js' %}"></script>
+    
+</body>
+
+</html>

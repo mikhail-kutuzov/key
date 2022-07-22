@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Password Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'APPNAME/style.css' %}">
+    <script src="{% static 'APPNAME/main.js' %}" defer></script> 
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="brand">
+            <img src="{% static 'APPNAME/ikon.png' %}">
+            <p>Key Knots</p>
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <span style="opacity:0;">ha</span>
+                <li><a href="javascript:;" onclick="document.getElementById('logout-btn').click();">Logout</a></li>
+                <span style="opacity:0;">ha</span>
+                <form hidden="true" action="logout" method="POST">
+                    {% csrf_token %}
+                    <input type="text" hidden="true" name="user" value="{{curguy}}">
+                    <input type="submit" id="logout-btn" name="logout">
+                </form>
+                <li><a href="javascript:;" onclick="displayModal('add-password-modal');">Add</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="modals-wrapper">
+        <span id="close-modal" title="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <!--add password modal-->
+        <div id="add-password-modal">
+            <form id="mainform" action="{% url 'adder' %}" role="form" method="POST">
+                {% csrf_token %}
+                <h2 style="font-size:40px; font-weight: 300; font-family:Verdana, Geneva, Tahoma, sans-serif; outline:none; background-color: #5C81D1; background: -webkit-linear-gradient(top left, #5C81D1, #82CEED); background-size: 400%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; position:relative; bottom:55px;">Key Knots</h2>
+                <img src="{% static 'APPNAME/ikon.png' %}" width="50px" style="position:relative; bottom:100px; left:130px;">
+                <h1 style="font-style: normal; font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: 200; color:black;" >ADD  PASSWORD</h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <label style="color:black; font-family:Arial, Helvetica, sans-serif; size:22px;">Site URL<label style="opacity:0;">heee</label></label>
+                <input type="text" class="inp" name="url" placeholder="https://example.com">
+              <br>
+              <br>
+           
+              <label style="color:black; font-family:Arial, Helvetica, sans-serif; size:22px;">Email address</label>
+              <input type="email" class="inp" name="email" placeholder="someone@examp.com">
+            
+            <br>
+            <br>
+            
+              <label style="color:black; font-family:Arial, Helvetica, sans-serif; size:22px;">Password<label style="opacity:0;">heee</label></label>
+              <input type="password" class="inp" name="password" placeholder="Password">
+           
+            <br>
+            <br>
+            <input type="text" hidden="true" name="user" value="{{curguy}}">
+            <button type="submit" id="addbutton" name="add-password">SAVE</button>
+            </form>
+        </div>
+
+    </div>
+    <br>
+<div class="mini_container">
+    <label class="state">Hide</label>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round" onclick="toggleFunction()"></span>
+      </label>
+      <label class="state">Show</label>
+
+      <div id="dup" style="display:none" >
+      {% if duplicate is 0 %}
+      <p class="noreuse">No reused passwords</p>
+
+      {% else %}
+      <p class="reuse">{{duplicate}} reused passwords!</p>
+
+      {% endif %}
+</div>
+    </div>
+    <div class="container">
+
+        {% for password in passwords %}
+        <div class="card">
+            <div class="actions" >&nbsp;<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                <a href="javascript:;" onclick="document.getElementById('delete-btn{{password.id}}').click();" class="action-item">Delete</a>
+                <hr style="color:white; opacity:0;">
+                <hr style="color:white; opacity:0;">
+                <hr style="color:white; opacity:0;">
+                <a href="javascript:;" onclick="document.getElementById('update-btn{{password.id}}').click();" class="action-item">Update</a>
+                 <form hidden="true" action="{% url 'deleter' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="text" hidden="true" name="user" value="{{curguy}}">
+                        <input type="text" hidden="true" name="password-id" value="{{password.id}}">
+                        <input type="submit" id="delete-btn{{password.id}}" name="delete">
+                 </form>
+                 <form hidden="true" action="{% url 'updater' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="text" hidden="true" name="user" value="{{curguy}}">
+                        <input type="text" hidden="true" name="password-id" value="{{password.id}}">
+                        <input type="submit" id="update-btn{{password.id}}" name="update">
+                 
+                 </form>   
+           </div> 
+           <!--Card of every saved pass-->
+            <div class="info">
+                <img src="{{password.logo}}" alt="Image">
+                <div class="details">
+                    <h3>{{password.name}}</h3>
+                    <br>
+                </div>
+                <p><i class="fa fa-user" style="position:relative; right:35px;"></i><span><input type="email" onfocus = "this.style.outline = 'none'; this.style.border = 'none'" value="{{password.email}}" style="font-size:small; font-family:Verdana, Geneva, Tahoma, sans-serif;"></span></p>
+                <i class="fa fa-key" style="position:relative; right:35px;"></i><span><input type="password" onfocus = "this.style.outline = 'none'; this.style.border = 'none'" name="password" class="myinput" value="{{password.password}}" style="font-size:small; font-family:Verdana, Geneva, Tahoma, sans-serif; margin-top:0px;"></span>
+            </div>
+            
+        </div>
+        
+        {% endfor %}
+    </div>
+</body>
+</html>
