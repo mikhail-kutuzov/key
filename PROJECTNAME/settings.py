@@ -133,4 +133,4 @@ EMAIL_PORT = 587
 #testing purppose
 KEY =config('KEY') 
 
-#EMAIL_HOST_USER = 'ford-fulkerson@outlook.com'
+#EMAIL_HOST_USER = 'ford-fulkerson@outlook.com' // for receiving queries
